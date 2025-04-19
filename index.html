@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore dados de chuva coletados pela comunidade no PluviApp em tempo real."
+    />
+    <title>PluviApp - Dados de Chuva</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="light">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="assets/logo.png" alt="PluviApp Logo" />
+          <h1>PluviApp</h1>
+        </div>
+        <nav class="desktop-nav">
+          <a href="/">Início</a>
+          <a href="/dados" class="active">Dados</a>
+          <a href="/sobre">Sobre</a>
+          <a href="#download" class="download-btn">Baixar App</a>
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun" style="display: none"></i>
+          </button>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <nav class="mobile-nav">
+          <button class="close-menu" aria-label="Fechar menu">
+            <i class="fas fa-times"></i>
+          </button>
+          <a href="/">Início</a>
+          <a href="/dados" class="active">Dados</a>
+          <a href="/sobre">Sobre</a>
+          <a href="#download" class="download-btn">Baixar App</a>
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun" style="display: none"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <canvas class="hero-canvas"></canvas>
+      <div class="hero-animation">
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+        <div class="raindrop"></div>
+      </div>
+      <div class="container">
+        <h2>Dados de Chuva da Comunidade</h2>
+        <p>
+          Visualize dados de chuva coletados por usuários do PluviApp em todo o
+          Brasil, com gráficos interativos e filtros personalizados.
+        </p>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h3>Sobre o PluviApp</h3>
+        <p>
+          O PluviApp é uma plataforma colaborativa que capacita comunidades a
+          coletar e compartilhar dados de chuva. Nossa missão é fornecer
+          informações precisas para previsão do tempo, agricultura e prevenção
+          de desastres.
+        </p>
+        <p>
+          Com uma interface intuitiva, qualquer pessoa pode registrar medições
+          de chuva, contribuindo para um banco de dados que beneficia
+          pesquisadores, agricultores e órgãos públicos.
+        </p>
+        <p>
+          <a href="#download" class="inline-btn"
+            >Junte-se à nossa comunidade!</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="data-usage">
+      <div class="container">
+        <h3>Como Usamos os Dados</h3>
+        <ul>
+          <li>
+            <strong>Previsão Local:</strong> Melhora a precisão de previsões
+            meteorológicas regionais com dados hiperlocais.
+          </li>
+          <li>
+            <strong>Agricultura:</strong> Auxilia no planejamento de plantio,
+            irrigação e colheita com base em padrões de chuva.
+          </li>
+          <li>
+            <strong>Prevenção de Desastres:</strong> Identifica áreas de risco
+            de alagamentos e deslizamentos.
+          </li>
+          <li>
+            <strong>Pesquisa Climática:</strong> Disponibiliza dados anônimos
+            para estudos acadêmicos e políticas públicas.
+          </li>
+          <li>
+            <strong>Engajamento Comunitário:</strong> Promove a conscientização
+            sobre mudanças climáticas.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="app-usage">
+      <div class="container">
+        <h3>Impacto do PluviApp</h3>
+        <p>
+          Veja como nossa comunidade está fazendo a diferença com contribuições
+          de dados de chuva.
+        </p>
+        <div class="usage-cards">
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h4>50.000+</h4>
+            <p>Usuários ativos</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-cloud-rain"></i>
+            <h4>1.2M+</h4>
+            <p>Registros de chuva</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>2.500+</h4>
+            <p>Cidades cobertas</p>
+          </div>
+        </div>
+        <p class="cta">
+          <a href="#download" class="inline-btn">Baixe o app e contribua!</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="container">
+        <h3>Visualização de Dados</h3>
+        <p>
+          Explore os dados de chuva com gráficos interativos. Use os filtros no
+          painel para selecionar estado, cidade ou período.
+        </p>
+        <div class="chart-container">
+          <h4>Precipitação por Região</h4>
+          <div class="iframe-wrapper">
+            <iframe
+              class="metabase-iframe"
+              src="https://your-metabase-instance.com/public/dashboard/precipitation-dashboard-id"
+              allowfullscreen
+            ></iframe>
+            <button
+              class="fullscreen-btn"
+              aria-label="Exibir em tela cheia"
+              data-iframe="iframe1"
+            >
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h4>Tendência Histórica de Chuva</h4>
+          <div class="iframe-wrapper">
+            <iframe
+              class="metabase-iframe"
+              src="https://your-metabase-instance.com/public/dashboard/historical-trend-dashboard-id"
+              allowfullscreen
+            ></iframe>
+            <button
+              class="fullscreen-btn"
+              aria-label="Exibir em tela cheia"
+              data-iframe="iframe2"
+            >
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 PluviApp. Todos os direitos reservados.</p>
+        <div class="links">
+          <a href="/privacidade">Política de Privacidade</a>
+          <a href="/contato">Contato</a>
+          <a href="#download">Baixar App</a>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Google Play"
+            ><i class="fab fa-google-play"></i
+          ></a>
+          <a href="#" aria-label="App Store"
+            ><i class="fab fa-app-store"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
